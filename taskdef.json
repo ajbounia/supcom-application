@@ -1,0 +1,32 @@
+{
+  "executionRoleArn": "arn:aws:iam::<<AccountID>>:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::<<AccountID>>:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": [],
+        "options": {
+          "awslogs-group": "/ecs/supcom-web-app",
+          "awslogs-region": "<<AWS-REGION>>",
+          "awslogs-stream-prefix": "awslogs-supcom-web-app"
+        }
+      },
+      "entryPoint": [],
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "image": "<<AccountID>>.dkr.ecr.<<AWS-REGION>>.amazonaws.com/supcom-web-app:latest",
+      "essential": true,
+      "name": "supcom-web-app"
+    }
+  ],
+  "requiresCompatibilities": ["EC2"],
+  "networkMode": "awsvpc",
+  "family": "supcom-web-app",
+  "cpu": "2048",
+  "memory": "4096"
+}
