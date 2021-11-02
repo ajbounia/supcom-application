@@ -8,7 +8,7 @@
         "secretOptions": [],
         "options": {
           "awslogs-group": "/ecs/supcom-web-app",
-          "awslogs-region": "${AWS-REGION}",
+          "awslogs-region": "${AWS_REGION}",
           "awslogs-stream-prefix": "awslogs-supcom-web-app"
         }
       },
@@ -19,7 +19,7 @@
           "containerPort": 80
         }
       ],
-      "image": "${AccountID}.dkr.ecr.${AWS-REGION}.amazonaws.com/supcom-web-app:latest",
+      "image": "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/supcom-web-app:latest",
       "essential": true,
       "name": "supcom-web-app"
     }
