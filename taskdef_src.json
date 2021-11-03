@@ -1,6 +1,6 @@
 {
-  "executionRoleArn": "arn:aws:iam::<<AccountID>>:role/ecsTaskExecutionRole",
-  "taskRoleArn": "arn:aws:iam::<<AccountID>>:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "logConfiguration": {
